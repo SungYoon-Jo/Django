@@ -3,11 +3,14 @@ from django.http import HttpResponse
 from .models import *
 
 
-def index(request):
-    return HttpResponse("Onememos~ Hello, World~ ")
+def main(request):
+    # return HttpResponse("Onememos~ Hello, World~ ")
+    return render(request, 'main.html')
 
 def createMemo(request):
 
-    request.GET['somekey']
-
-    return HttpResponse('')
+    memoContent = request.GET['memoConten']
+   
+    print(memoContent)     
+    
+    return HttpResponse('hi Create memo = ' + memoContent)
