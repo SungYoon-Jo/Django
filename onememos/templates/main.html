@@ -1,1 +1,37 @@
-main page
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>frist</title>
+    <style>
+        form > label {
+            display: inline-block;
+            width: 120px;
+        }
+        form > input {
+            padding: 4px;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Good Days</h1>
+
+    <form action="http://localhost:8000/onememos/createMemo/" method="post" id="memowritefrom">
+        <label for="memo" >Oneline Memo</label>
+        <input type="text" id="memo" name="memo_text" size="100" placeholder="Write Oneline Memo" autocomplete="off">
+        <!-- <label for="memo" >Name</label>
+        <input type="text" id="memo" name="memo_text" size="100" placeholder="Write Name" autocomplete="off"><br>
+        <label for="memo" >Email</label>
+        <input type="text" id="memo" name="memo_text" size="100" placeholder="Write Email" autocomplete="off"> -->
+    </form>
+
+    <div>
+        <button type="submit" form="memowritefrom">Save Memo</button>
+    </div>
+
+</body>
+</html>

@@ -4,13 +4,9 @@ from .models import *
 
 
 def main(request):
-    # return HttpResponse("Onememos~ Hello, World~ ")
     return render(request, 'main.html')
 
 def createMemo(request):
-
-    memoContent = request.GET['memoConten']
-   
-    print(memoContent)     
+    memoContent = request.POST['memoConten']
     
     return HttpResponse('hi Create memo = ' + memoContent)
