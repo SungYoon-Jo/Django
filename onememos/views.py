@@ -7,6 +7,11 @@ def main(request):
     return render(request, 'main.html')
 
 def createMemo(request):
-    memoContent = request.POST['memoConten']
+    memoContent = request.POST['memoContent']
     
-    return HttpResponse('hi Create memo = ' + memoContent)
+    article = Memo(memo_text = memoContent)
+    article.save()
+    
+    return HttpResponse('create memo = ' + memoContent)
+
+    

@@ -20,9 +20,10 @@
 
     <h1>Good Days</h1>
 
-    <form action="http://localhost:8000/onememos/createMemo/" method="post" id="memowritefrom">
+    <form action="http://localhost:8000/onememos/createMemo/" method="POST" id="memowritefrom">
         <label for="memo" >Oneline Memo</label>
-        <input type="text" id="memo" name="memo_text" size="100" placeholder="Write Oneline Memo" autocomplete="off">
+        <input type="text" id="memo" name="memoContent" size="100" placeholder="Write Oneline Memo" autocomplete="off"> 
+        {% csrf_token %}
         <!-- <label for="memo" >Name</label>
         <input type="text" id="memo" name="memo_text" size="100" placeholder="Write Name" autocomplete="off"><br>
         <label for="memo" >Email</label>
