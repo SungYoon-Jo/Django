@@ -1,0 +1,14 @@
+
+py manage.py migrate - 초기 설정 패키치
+
+py manage.py runserver - 서버 실행
+
+py manage.py runserver 8000 - 지정 포트로 서버 실행
+
+py manage.py makemigrations - migrations 생성
+
+py manage.py migrate - migration 실행
+
+py -m venv myvenv - venv 폴더 생성
+
+py manage.py dbshell - sqlite 연결
