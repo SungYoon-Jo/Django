@@ -1,17 +1,25 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 from .models import *
 
 
+
 def main(request):
-    return render(request, 'main.html')
+    # return render(request, 'main.html')
+    
+    lists = Memo.objects.all()
+    data = {'lists' : lists}
+    
+    return render(request, 'main.html', data)
+
 
 def createMemo(request):
-    memoContent = request.POST['memoContent']
+    # memoContent = request.POST['memoContent']
     
-    article = Memo(memo_text = memoContent)
-    article.save()
+    # article = Memo(memo_text = memoContent)
+    # article.save()
     
-    return HttpResponse('create memo = ' + memoContent)
+    # return HttpResponse('create memo = ' + memoContent)
 
-    
+    return HttpResponseRedirect(reverse('main'))
