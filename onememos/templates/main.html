@@ -24,14 +24,21 @@
         <label for="memo" >Oneline Memo</label>
         <input type="text" id="memo" name="memoContent" size="100" placeholder="Write Oneline Memo" autocomplete="off"> 
         {% csrf_token %}
-        <!-- <label for="memo" >Name</label>
-        <input type="text" id="memo" name="memo_text" size="100" placeholder="Write Name" autocomplete="off"><br>
-        <label for="memo" >Email</label>
-        <input type="text" id="memo" name="memo_text" size="100" placeholder="Write Email" autocomplete="off"> -->
+        <button type="submit" form="memowritefrom">Save Memo</button>
     </form>
 
-    <div>
-        <button type="submit" form="memowritefrom">Save Memo</button>
+    <div style="padding-top: 50px">
+        <ul style="line-height: 2em">
+            {% for list in lists %}
+                <li>
+                    <b>{{list.id}}</b>
+                    {{list.memo_text}}
+                    <small style="color: green; font-weight: bold">
+                        ({{list.published_date | date:'Y-m-d'}})
+                    </small>
+                </li>
+            {% endfor %}
+        </ul>
     </div>
 
 </body>
