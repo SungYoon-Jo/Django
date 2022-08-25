@@ -17,6 +17,14 @@
     </style>
 </head>
 <body>
+    
+    <form action="http://localhost:8000/onememos/writeMemo/" method="GET">
+        <button>get click</button>
+    </form>
+    <form action="http://localhost:8000/onememos/writeMemo/" method="POST">
+        {% csrf_token %}
+        <button>post click</button>
+    </form>
 
     <h1>Good Days</h1>
 

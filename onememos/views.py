@@ -23,3 +23,11 @@ def createMemo(request):
     # return HttpResponse('create memo = ' + memoContent)
 
     return HttpResponseRedirect(reverse('main'))
+
+def writeMemo(request):
+    # return HttpResponse('writeMemo good')
+    
+    if request.method == 'GET':
+        return HttpResponse("to GET")
+    if request.method == 'POST':
+        return HttpResponse('to POST')
