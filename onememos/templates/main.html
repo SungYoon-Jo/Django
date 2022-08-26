@@ -14,6 +14,14 @@
             padding: 4px;
             margin-bottom: 4px;
         }
+        a:link {
+            text-decoration: none;
+            color:black
+        }
+        a:visited {
+            text-decoration: none;
+            color:black
+        }
     </style>
 </head>
 <body>
@@ -44,6 +52,8 @@
                     <small style="color: green; font-weight: bold">
                         ({{list.published_date | date:'Y-m-d'}})
                     </small>
+                    [ <a href="./modify/{{list.id}}">Modify</a> ]
+                    [ <a href="./delete/{{list.id}}">Delete</a> ]
                 </li>
             {% endfor %}
         </ul>

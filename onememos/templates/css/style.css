@@ -1,8 +1,0 @@
-form > label {
-    display: inline-block;
-    width: 150px;
-}
-form > input {
-    padding: 4px;
-    margin-bottom: 4px;
-}
