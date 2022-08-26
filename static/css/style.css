@@ -1,0 +1,16 @@
+form > label {
+    display: inline-block;
+    width: 120px;
+}
+form > input {
+    padding: 4px;
+    margin-bottom: 4px;
+}
+a:link {
+    text-decoration: none;
+    color:black
+}
+a:visited {
+    text-decoration: none;
+    color:black
+}
