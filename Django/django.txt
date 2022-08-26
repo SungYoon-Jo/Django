@@ -1,3 +1,6 @@
+django-admin startproject config . - start
+
+py manage.py startapp myapp - app 설치
 
 py manage.py migrate - 초기 설정 패키치
 
