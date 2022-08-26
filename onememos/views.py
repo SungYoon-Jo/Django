@@ -3,8 +3,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from .models import *
 
-
-
 def main(request):
     lists = Memo.objects.all()
     data = {'lists' : lists}
@@ -46,6 +44,4 @@ def deleteMemo(request, idx):
     db_article = Memo.objects.get(id=idx)    
     db_article.delete()
     
-    return HttpResponseRedirect(reverse('main'))
-    return HttpResponseRedirect(reverse('main'))
     return HttpResponseRedirect(reverse('main'))
