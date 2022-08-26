@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="http://localhost:8000/main/createMemo/" method="POST" id="memowritefrom">
+        {% csrf_token %}
+        <label for="memo" >Title</label>
+        <input type="text" id="memo" name="title" size="20" placeholder="Write title" autocomplete="off"> 
+        <br>
+        <label for="memo" >Content</label>
+        <input type="text" id="memo" name="content" size="20" placeholder="Write content" autocomplete="off"> 
+        <br>
+        <label for="memo" >Author</label>
+        <input type="text" id="memo" name="writer" size="20" placeholder="Write author" autocomplete="off"> 
+        <br>
+        <button type="submit" form="memowritefrom">Save Memo</button>
+    </form>
+    <br>
+
+    <table style="text-align:center; width:700px; border:1px solid black;">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>내용</th>
+                <th>작성자</th>
+                <th>수정</th>
+            </tr>
+        </thead>
+            {% for board_list in board %}
+                <tr>
+                    <td>{{ board_list.pk }}</td>
+                    <td>{{ board_list.title }}</td>
+                    <td>{{ board_list.content }}</td>
+                    <td>{{ board_list.writer }}</td>
+                </tr>
+            {% endfor %}
+    </table>
+</body>
+</html>
