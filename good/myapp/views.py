@@ -38,7 +38,34 @@ def createMemo(request):
     )
     board.save()
     
-    return HttpResponseRedirect(reverse('board'))
+    return HttpResponseRedirect(reverse('main'))
 
-def tp(request):
+def main(request):
+    
     return render(request, 'main.html')
+
+def modifyPage(request, idx):
+    
+    article = Post.objects.get(id=idx)
+    data = {'article': article}
+    
+    print(article)
+    return render(request, 'modify.html', data)
+
+def updatePage(request):
+    idx = request.POST['idx']
+    memoContent = request.POST['memoContent']
+    
+    db_article = Post.objects.get(id = idx)
+    
+    db_article.title = memoContent
+    db_article.content = memoContent
+    db_article.writer = memoContent
+    
+    db_article.save()
+    
+    return HttpResponseRedirect(reverse('frist'))
+
+def deletePage(request):
+    return HttpResponse('deletePage')
+
