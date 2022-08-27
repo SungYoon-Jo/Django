@@ -1,4 +1,3 @@
-from turtle import title
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
@@ -40,3 +39,6 @@ def createMemo(request):
     board.save()
     
     return HttpResponseRedirect(reverse('board'))
+
+def tp(request):
+    return render(request, 'main.html')
