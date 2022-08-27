@@ -1,0 +1,22 @@
+td {
+    text-align: center;
+    width: 200px;
+    height: 250px;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+a:link {
+    text-decoration: none;
+    color:gray
+}
+a:visited {
+    text-decoration: none;
+    color:gray
+}
+
+a {
+    font-weight: bold;
+}
