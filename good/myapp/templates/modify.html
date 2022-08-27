@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modify</title>
+    <style>
+        form > label {
+            display: inline-block;
+            width: 120px;
+        }
+        form > input {
+            padding: 4px;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Modify Page</h1>
+
+    <form action="./update/" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="idx" value="{{ article.pk }}">
+
+        <label for="memo">Modify Title</label>
+        <input type="text" id="memo" name="memoContent" value="{{ article.title }}" size="100" autocomplete="off">
+
+        <label for="memo">Modify Content</label>
+        <input type="text" id="memo" name="memoContent" value="{{ article.content }}" size="100" autocomplete="off">
+        
+        <label for="memo">Modify Author</label>
+        <input type="text" id="memo" name="memoContent" value="{{ article.writer }}" size="100" autocomplete="off">
+
+        <button type="submit">Modify</button>
+    </form>
+</body>
+</html>
