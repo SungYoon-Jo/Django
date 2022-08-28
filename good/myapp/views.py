@@ -24,7 +24,7 @@ def board(request):
             'boardForm': boardForm,
             'board': board,
         }
-        return render(request, 'frist.html', context)
+        return render(request, 'root.html', context)
     
 def createMemo(request):
     title = request.POST['title']
@@ -38,11 +38,16 @@ def createMemo(request):
     )
     board.save()
     
-    return HttpResponseRedirect(reverse('main'))
+    return HttpResponseRedirect(reverse('root'))
 
 def main(request):
     
-    return render(request, 'main.html')
+    lists = Post.objects.all()
+    data = {'lists' : lists}
+
+    # print(data)    
+    return render(request, 'main.html', data)
+
 
 def modifyPage(request, idx):
     
@@ -54,18 +59,32 @@ def modifyPage(request, idx):
 
 def updatePage(request):
     idx = request.POST['idx']
-    memoContent = request.POST['memoContent']
+    title = request.POST['title']
+    content = request.POST['content']
+    writer = request.POST['writer']
     
     db_article = Post.objects.get(id = idx)
     
-    db_article.title = memoContent
-    db_article.content = memoContent
-    db_article.writer = memoContent
+    db_article.title = title
+    db_article.content = content
+    db_article.writer = writer
     
     db_article.save()
     
-    return HttpResponseRedirect(reverse('frist'))
+    return HttpResponseRedirect(reverse('root'))
 
-def deletePage(request):
-    return HttpResponse('deletePage')
+def deletePage(request, idx):
+    
+    db_article = Post.objects.get(id=idx)    
+    db_article.delete()
+    
+    return HttpResponseRedirect(reverse('root'))
 
+def numPage(request, idx):
+    
+    article = Post.objects.get(id=idx)
+    data = {'article': article}
+    
+    print(article)
+    # return render(request, 'numPage', data)
+    return render(request, 'root.html', data)

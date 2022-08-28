@@ -3,9 +3,12 @@ from .views import *
 
 urlpatterns = [
     path('', main, name='main'),
-    path('frist/', board, name='frist'),
+    path('root/', board, name='root'),
+    
+    path('<str:idx>', numPage, name='numPage'),
+    
     path('createMemo/', createMemo),
-    path('frist/modify/<str:idx>', modifyPage),
-    path('frist/modify/update/', updatePage),
-    path('delete/<str:idx>', deletePage),
+    path('root/modify/<str:idx>', modifyPage),
+    path('root/modify/update/', updatePage),
+    path('root/delete/<str:idx>', deletePage),
 ]

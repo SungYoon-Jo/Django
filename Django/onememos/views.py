@@ -6,6 +6,7 @@ from .models import *
 def main(request):
     lists = Memo.objects.all()
     data = {'lists' : lists}
+    # print(data)
     
     return render(request, 'main.html', data)
 
