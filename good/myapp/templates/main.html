@@ -12,7 +12,7 @@
 <body>
     <header>
         <h1 style="text-align: center">Main Page</h1>
-
+        <a href="./root/">root</a>
         <nav>
             <ul>
                 <li>
@@ -37,6 +37,7 @@
             <tr>
                 {% for list in lists %}
                     <td>
+                        <img src="{{ list.images.url }}" alt=""><br>
                         <a href="{{list.id}}">{{list.title}}</a>
                     </td>
                 {% endfor %}
@@ -44,7 +45,6 @@
             <tr>
                 <td>
                     <img src="{% static "img/1-1.png" %}" alt=""><br>
-                    <!-- <a href="http://localhost:8000/main/1">한솥</a>  -->
                     <a href="./{{lists.title}}/">한솥</a> 
                 </td>
                 <td>

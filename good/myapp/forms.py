@@ -5,4 +5,4 @@ from .models import *
 class BoardForm(ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'content', 'writer']
+        fields = ['title', 'content', 'writer', 'photo']
