@@ -34,16 +34,19 @@
 
     <div id="webbody" align="center">
         <table border="1">
-            <tr>
-                {% for list in lists %}
+            {% for list in lists %}
+            <!-- 행을 반복하는 tr을 반복문으로 만들어야한다. 이때 새로운 title db를 만들어야함 -->
+                <tr> 
+                    <!-- 그리고 그 안에서 td를 반복시켜서 나열을 시켜야한다. -->
                     <td>
                         {% if list.photo %} 
                             <img src="{{ list.photo.url }}" alt=""><br>
                             <a href="{{list.id}}">{{list.title}}</a>
                         {% endif %}
                     </td>
-                {% endfor %}
-            </tr>
+                </tr>
+            {% endfor %}
+
             <tr>
                 <td>
                     <img src="{% static "img/2-2.png" %}" alt=""><br>

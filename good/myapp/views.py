@@ -40,14 +40,13 @@ def createMemo(request):
         writer=writer,
         photo = photo,
     )
-    
     board.save()
     
     return HttpResponseRedirect(reverse('root'))
 
 def main(request):
-    
-    lists = Post.objects.all()
+    lists = Post.objects.all().order_by('id')
+
     data = {'lists' : lists}
 
     return render(request, 'main.html', data)
