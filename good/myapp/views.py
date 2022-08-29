@@ -40,6 +40,7 @@ def createMemo(request):
         writer=writer,
         photo = photo,
     )
+    
     board.save()
     
     return HttpResponseRedirect(reverse('root'))
@@ -49,7 +50,6 @@ def main(request):
     lists = Post.objects.all()
     data = {'lists' : lists}
 
-    print(data)
     return render(request, 'main.html', data)
 
 
@@ -98,13 +98,3 @@ def numPage(request, idx):
 
 def upload(request):
     return render(request,'upload.html')
-
-def upload_create(request):
-    form=Profile()
-    form.title=request.POST['title']
-    try:
-        form.image=request.FILES['image']
-    except: 
-        pass
-    form.save()
-    return redirect('/myprofile/profile/')  

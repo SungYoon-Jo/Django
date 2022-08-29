@@ -15,8 +15,8 @@ urlpatterns = [
     path('root/modify/update/', updatePage),
     path('root/delete/<str:idx>', deletePage),
     
-    path('myprofile/upload/',myprofile.views.upload,name="upload"),    
-    path('myprofile/upload_create/',myprofile.views.upload_create,name="upload_create"),
+    # path('myprofile/upload/',myprofile.views.upload,name="upload"),    
+    # path('myprofile/upload_create/',myprofile.views.upload_create,name="upload_create"),
     
   
 ]
