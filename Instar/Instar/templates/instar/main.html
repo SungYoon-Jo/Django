@@ -60,33 +60,36 @@
 
     <div style="display: flex; flex-direction: row; text-align: center; justify-content: center; padding-top: 60px; background-color: #FAFAFA " >
         <div style="width: 500px; min-width:500px; margin-right: 300px;">
-            <div class="feed">
-                <div style="display: flex; flex-direction: row; align-items: center; margin: 0 20px;">
-                    <div class="box" style="width: 60px; height: 60px;">
-                        <img class="profile" src="http://file3.instiz.net/data/file3/2021/05/31/a/4/9/a49fd98f3570e2ecbdbb2b0108b78ab7.png">
+
+            {% for feed in feeds %}
+                <div class="feed">
+                    <div style="display: flex; flex-direction: row; align-items: center; margin: 0 20px;">
+                        <div class="box" style="width: 60px; height: 60px;">
+                            <img class="profile" src="{{ feed.profile_image }}">
+                        </div>
+                        <div style="margin-left: 10px; color: gray; font-size: 12px;" >
+                            {{ feed.user_id }}
+                        </div>
                     </div>
-                    <div style="margin-left: 10px; color: gray; font-size: 12px;" >
-                        gooddays
+                    <div><img style="width: 100%;" src="{{ feed.image }}" alt=""></div>
+                    <div style="margin: 0 20px; display: flex; flex-direction: row; justify-content:space-between;">
+                        <div>
+                            <span class="material-symbols-outlined">favorite</span>
+                            <span class="material-symbols-outlined">mode_comment</span>
+                            <span class="material-symbols-outlined">send</span>
+                        </div>
+                        <div>
+                            <span class="material-symbols-outlined">bookmark</span>
+                        </div>
+                    </div>
+                    <div style="margin: 0 20px; text-align: left; font-size: 12px">춘식이 <b>외 {{ feed.like_count }}</b>명이 좋아합니다.</div>
+                    <div style="margin: 0 20px; text-align: left; font-size: 14px;"><b>{{ feed.user_id }}</b> {{ feed.content }}</div>
+                    <div style="border-top: solid 1px #EBEDF0;">
+                        <input type="text" class="form-control" placeholder="댓글 달기..." style="box-shadow: none; outline: none; border: none;">
                     </div>
                 </div>
-                <div><img style="width: 100%;" src="http://www.jejusori.net/news/photo/201805/204575_237095_0813.jpg" alt=""></div>
-                <div style="margin: 0 20px; display: flex; flex-direction: row; justify-content:space-between;">
-                    <div>
-                        <span class="material-symbols-outlined">favorite</span>
-                        <span class="material-symbols-outlined">mode_comment</span>
-                        <span class="material-symbols-outlined">send</span>
-                    </div>
-                    <div>
-                        <span class="material-symbols-outlined">bookmark</span>
-                    </div>
-                </div>
-                <div style="margin: 0 20px; text-align: left; font-size: 12px">춘식이 <b>외 200명</b>이 좋아합니다.</div>
-                <div style="margin: 0 20px; text-align: left; font-size: 14px;"><b>gooddays_33</b> 푸른빛 바다 제주도</div>
-                <div style="margin: 0 20px; text-align: left; font-size: 14px;"><b>gogidong</b> 언제 가도 좋은 제주도</div>
-                <div style="border-top: solid 1px #EBEDF0;">
-                    <input type="text" class="form-control" placeholder="댓글 달기..." style="box-shadow: none; outline: none; border: none;">
-                </div>
-            </div>
+            {% endfor %}
+
         </div>
         <div style="width: 400px; height: 1000px; position: fixed; left: 62%">
             <div style="display: flex; flex-direction: row; align-items: center; margin: 0 20px;">
