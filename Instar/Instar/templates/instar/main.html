@@ -21,12 +21,28 @@
           'GRAD' 0,
           'opsz' 48
         }
+        .box {
+            width: 150px;
+            height: 150px; 
+            border-radius: 70%;
+            overflow: hidden;
+        }
+        .profile {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .feed {
+            margin: 20px 0;
+            border: solid 1px #DADDE1;
+            background: white;
+        }
         </style>
 
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: fixed; width: 100%;">
         <div class="container-fluid" style="justify-content: space-evenly; flex-wrap: nowrap; min-width: 1000px;">
             <a class="navbar-brand" href="#">
                 <img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" alt="" style="width: 100px">
@@ -42,17 +58,149 @@
         </div>
     </nav>
 
-    <div style="display: flex; flex-direction: row">
-        <div style="width: 600px; height: 1000px; background: red">
-            왼쪽
+    <div style="display: flex; flex-direction: row; text-align: center; justify-content: center; padding-top: 60px; background-color: #FAFAFA " >
+        <div style="width: 500px; min-width:500px; margin-right: 300px;">
+            <div class="feed">
+                <div style="display: flex; flex-direction: row; align-items: center; margin: 0 20px;">
+                    <div class="box" style="width: 60px; height: 60px;">
+                        <img class="profile" src="http://file3.instiz.net/data/file3/2021/05/31/a/4/9/a49fd98f3570e2ecbdbb2b0108b78ab7.png">
+                    </div>
+                    <div style="margin-left: 10px; color: gray; font-size: 12px;" >
+                        gooddays
+                    </div>
+                </div>
+                <div><img style="width: 100%;" src="http://www.jejusori.net/news/photo/201805/204575_237095_0813.jpg" alt=""></div>
+                <div style="margin: 0 20px; display: flex; flex-direction: row; justify-content:space-between;">
+                    <div>
+                        <span class="material-symbols-outlined">favorite</span>
+                        <span class="material-symbols-outlined">mode_comment</span>
+                        <span class="material-symbols-outlined">send</span>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined">bookmark</span>
+                    </div>
+                </div>
+                <div style="margin: 0 20px; text-align: left; font-size: 12px">춘식이 <b>외 200명</b>이 좋아합니다.</div>
+                <div style="margin: 0 20px; text-align: left; font-size: 14px;"><b>gooddays_33</b> 푸른빛 바다 제주도</div>
+                <div style="margin: 0 20px; text-align: left; font-size: 14px;"><b>gogidong</b> 언제 가도 좋은 제주도</div>
+                <div style="border-top: solid 1px #EBEDF0;">
+                    <input type="text" class="form-control" placeholder="댓글 달기..." style="box-shadow: none; outline: none; border: none;">
+                </div>
+            </div>
         </div>
-        <div style="width: 400px; height: 1000px; background: blue">
-            오른쪽
+        <div style="width: 400px; height: 1000px; position: fixed; left: 62%">
+            <div style="display: flex; flex-direction: row; align-items: center; margin: 0 20px;">
+                <div class="box" style="width: 70px; height: 70px;">
+                    <img class="profile" src="http://file3.instiz.net/data/file3/2021/05/31/a/4/9/a49fd98f3570e2ecbdbb2b0108b78ab7.png">
+                </div>
+                <div style="margin-left: 10px; text-align: left">
+                    <div style="font-weight: bold;">
+                        gooddays
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: row; justify-content:space-between;"> 
+                <div style="color: gray; font-weight: bold;">
+                    회원님을 위한 추천
+                </div>
+                <div>
+                    <a href="" style="text-decoration: none; color: black; font-weight: bold;">모두보기</a>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: row; justify-content:space-between; align-items: center; margin: 5px;">
+                <div style="display: flex; flex-direction: row;">
+                    <div class="box" style="width: 35px; height: 35px;">
+                        <img class="profile" src="http://file3.instiz.net/data/file3/2021/05/31/a/4/9/a49fd98f3570e2ecbdbb2b0108b78ab7.png">
+                    </div>
+                    <div style="margin-left: 10px; text-align: left">
+                        <div style="font-weight: bold; font-size: 14px; ">
+                            gooddays
+                        </div>
+                        <div style="font-size: 12px; color: gray ">
+                            two_e1님이 팔로우합니다
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="" style="text-decoration: none; font-weight: bold; font-size: 13px;">팔로우</a>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: row; justify-content:space-between; align-items: center; margin: 5px;">
+                <div style="display: flex; flex-direction: row;">
+                    <div class="box" style="width: 35px; height: 35px;">
+                        <img class="profile" src="http://file3.instiz.net/data/file3/2021/05/31/a/4/9/a49fd98f3570e2ecbdbb2b0108b78ab7.png">
+                    </div>
+                    <div style="margin-left: 10px; text-align: left">
+                        <div style="font-weight: bold; font-size: 14px; ">
+                            gooddays
+                        </div>
+                        <div style="font-size: 12px; color: gray ">
+                            two_e1님이 팔로우합니다
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="" style="text-decoration: none; font-weight: bold; font-size: 13px;">팔로우</a>
+                </div>
+            </div>            <div style="display: flex; flex-direction: row; justify-content:space-between; align-items: center; margin: 5px;">
+                <div style="display: flex; flex-direction: row;">
+                    <div class="box" style="width: 35px; height: 35px;">
+                        <img class="profile" src="http://file3.instiz.net/data/file3/2021/05/31/a/4/9/a49fd98f3570e2ecbdbb2b0108b78ab7.png">
+                    </div>
+                    <div style="margin-left: 10px; text-align: left">
+                        <div style="font-weight: bold; font-size: 14px; ">
+                            gooddays
+                        </div>
+                        <div style="font-size: 12px; color: gray ">
+                            two_e1님이 팔로우합니다
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="" style="text-decoration: none; font-weight: bold; font-size: 13px;">팔로우</a>
+                </div>
+            </div>            <div style="display: flex; flex-direction: row; justify-content:space-between; align-items: center; margin: 5px;">
+                <div style="display: flex; flex-direction: row;">
+                    <div class="box" style="width: 35px; height: 35px;">
+                        <img class="profile" src="http://file3.instiz.net/data/file3/2021/05/31/a/4/9/a49fd98f3570e2ecbdbb2b0108b78ab7.png">
+                    </div>
+                    <div style="margin-left: 10px; text-align: left">
+                        <div style="font-weight: bold; font-size: 14px; ">
+                            gooddays
+                        </div>
+                        <div style="font-size: 12px; color: gray ">
+                            two_e1님이 팔로우합니다
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="" style="text-decoration: none; font-weight: bold; font-size: 13px;">팔로우</a>
+                </div>
+            </div>            <div style="display: flex; flex-direction: row; justify-content:space-between; align-items: center; margin: 5px;">
+                <div style="display: flex; flex-direction: row;">
+                    <div class="box" style="width: 35px; height: 35px;">
+                        <img class="profile" src="http://file3.instiz.net/data/file3/2021/05/31/a/4/9/a49fd98f3570e2ecbdbb2b0108b78ab7.png">
+                    </div>
+                    <div style="margin-left: 10px; text-align: left">
+                        <div style="font-weight: bold; font-size: 14px; ">
+                            gooddays
+                        </div>
+                        <div style="font-size: 12px; color: gray ">
+                            two_e1님이 팔로우합니다
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="" style="text-decoration: none; font-weight: bold; font-size: 13px;">팔로우</a>
+                </div>
+            </div>
+            <div style="margin-top: 30px; font-size: 12px; color: #DADDE1; text-align: left">
+                <div> 소개 도움말 홍보 센터 API 채용 정보 </div>
+                <div> 개인정보처리방침 약관 위치 언어</div>
+            </div>
+            <div style="margin-top: 30px; font-size: 12px; color: #DADDE1; text-align: left"> © 2022 INSTAGRAM FROM META </div>
         </div>
     </div>
-
-
-
 
     <!-- Optional JavaScript; choose one of the two! -->
 
