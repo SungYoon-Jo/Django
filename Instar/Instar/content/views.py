@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from user.models import User
 from .models import Feed
 from uuid import uuid4
 import os
@@ -11,7 +12,18 @@ class Main(APIView):
         
         feed_list = Feed.objects.all().order_by('-id')
         
-        return render(request,"instar/main.html", context=dict(feeds=feed_list))
+        print(request.session['email'])   
+        email = request.session['email']
+        
+        if email is None:
+            return render(request,"user/login.html")
+        
+        user = User.objects.filter(email=email).first()
+        
+        if user is None:
+            return render(request,"user/login.html")
+        
+        return render(request,"instar/main.html", context=dict(feeds=feed_list, user=user))
 
 class UploadFeed(APIView):
         def post(self, request):
