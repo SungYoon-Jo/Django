@@ -1,9 +1,9 @@
 from django.db import models
 
 class Feed(models.Model):
-    content = models.TextField()    # 글내용
-    image = models.TextField()  # 피드 이미지
-    email = models.EmailField(default='')     # 글쓴이
+    content = models.TextField()   
+    image = models.TextField() 
+    email = models.EmailField(default='')   
 
 
 class Like(models.Model):
