@@ -1,10 +1,11 @@
-from email import message
+from uuid import uuid4
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import User
 from django.contrib.auth.hashers import make_password
-
+import os
+from config.settings import MEDIA_ROOT
 
 class Join(APIView):
     def get(self, request):
@@ -12,7 +13,7 @@ class Join(APIView):
     
     def post(self, request):
         email =request.data.get('email', None)
-        nickname =request.data.get('name', None)
+        nickname =request.data.get('nickname', None)
         name =request.data.get('name', None)
         password =request.data.get('password', None)
         
@@ -21,7 +22,7 @@ class Join(APIView):
             nickname = nickname,
             name=name,
             password=make_password(password),
-            profile_image = "defalu_profile.jpg"
+            profile_image = "defalut_profile.png"
             )
         return Response(status=200)
 
@@ -44,3 +45,31 @@ class Login(APIView):
             return Response(status=200)
         else:
             return Response(status=400, data=dict(message="회원정보가 잘못되었습니다."))
+
+class LogOut(APIView):
+    
+    def get(self, request):
+        request.session.flush()
+        return render(request,"user/login.html")
+    
+class UploadProfile(APIView):
+        def post(self, request):
+            
+            file = request.FILES['file']
+            email = request.data.get('email')
+            
+            uuid_name = uuid4().hex
+            save_path = os.path.join(MEDIA_ROOT, uuid_name)
+            
+            with open(save_path, 'wb+') as destination:
+                for chunk in file.chunks():
+                    destination.write(chunk)
+            
+            profile_image = uuid_name
+            
+            user = User.objects.filter(email=email).first()
+            
+            user.profile_image = profile_image
+            user.save()
+            
+            return Response(status=200)
