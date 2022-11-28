@@ -126,6 +126,7 @@ class ToggleLike(APIView):
 class ToggleBookmark(APIView):
     def post(self, request):
         feed_id = request.data.get('feed_id', None)
+        print(feed_id)
         bookmark_text = request.data.get('bookmark_text', True)
         print(bookmark_text)
         if bookmark_text == 'bookmark_border':
